@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* Replaced SASS variables with actual color values */
+			/* Yellow color: #f5ba1a */
+			/* Black color: #000000 */
+			/* Grey color: #cccccc */
+			body {
+				font-family: Verdana, Geneva, sans-serif;
+				font-size: 14px;
+				background: #f2f2f2;
+			}
+
+			.clearfix:after {
+				content: "";
+				display: block;
+				clear: both;
+				visibility: hidden;
+				height: 0;
+			}
+
+			.form_wrapper {
+				background: #fff;
+				width: 400px;
+				max-width: 100%;
+				box-sizing: border-box;
+				padding: 25px;
+				margin: 8% auto 0;
+				position: relative;
+				z-index: 1;
+				border-top: 5px solid #f5ba1a; /* Yellow color */
+				box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+				animation: expand 0.8s 0.6s ease-out forwards;
+				opacity: 0;
+			}
+
+			h2 {
+				font-size: 1.5em;
+				line-height: 1.5em;
+				margin: 0;
+			}
+
+			.title_container {
+				text-align: center;
+				padding-bottom: 15px;
+			}
+
+			.input_field {
+				position: relative;
+				margin-bottom: 20px;
+				animation: bounce 0.6s ease-out;
+			}
+
+			input {
+				&[type="text"],
+				&[type="email"],
+				&[type="password"] {
+					width: 100%;
+					padding: 8px 10px 9px 35px;
+					height: 35px;
+					border: 1px solid #cccccc; /* Grey color */
+					box-sizing: border-box;
+					outline: none;
+					transition: all 0.3s ease-in-out;
+				}
+
+				&[type="text"]:hover,
+				&[type="email"]:hover,
+				&[type="password"]:hover {
+					background: #fafafa;
+				}
+
+				&[type="text"]:focus,
+				&[type="email"]:focus,
+				&[type="password"]:focus {
+					box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
+					border: 1px solid #f5ba1a; /* Yellow color */
+					background: #fafafa;
+				}
+
+				&[type="submit"] {
+					background: #f5ba1a; /* Yellow color */
+					height: 35px;
+					line-height: 35px;
+					width: 100%;
+					border: none;
+					cursor: pointer;
+					color: #fff;
+					font-size: 1.1em;
+					margin-bottom: 10px;
+					transition: all 0.3s ease-in-out;
+				}
+
+				&[type="submit"]:hover,
+				&[type="submit"]:focus {
+					background: #e0a617; /* Darken Yellow */
+				}
+			}
+
+			.radio_option label {
+				margin-right: 1em;
+			}
+
+			.radio_option input:checked + label:before {
+				background-color: #000000; /* Black color */
+				border-color: #000000; /* Black color */
+			}
+
+			.select_option select {
+				display: inline-block;
+				width: 100%;
+				height: 35px;
+				padding: 0px 15px;
+				cursor: pointer;
+				color: #7b7b7b;
+				border: 1px solid #cccccc; /* Grey color */
+				background: #fff;
+				transition: all 0.2s ease;
+			}
+
+			.select_arrow {
+				position: absolute;
+				top: calc(50% - 4px);
+				right: 15px;
+				width: 0;
+				height: 0;
+				pointer-events: none;
+				border-width: 8px 5px 0 5px;
+				border-style: solid;
+				border-color: #7b7b7b transparent transparent transparent;
+			}
+
+			.select_option select:hover + .select_arrow,
+			.select_option select:focus + .select_arrow {
+				border-top-color: #000000; /* Black color */
+			}
+
+			.checkbox_option input:checked + label:before {
+				border-color: #000000; /* Black color */
+			}
+
+			@keyframes expand {
+				0% {
+					transform: scale3d(1, 0, 1);
+					opacity: 0;
+				}
+				25% {
+					transform: scale3d(1, 1.2, 1);
+				}
+				50% {
+					transform: scale3d(1, 0.85, 1);
+				}
+				75% {
+					transform: scale3d(1, 1.05, 1);
+				}
+				100% {
+					transform: scale3d(1, 1, 1);
+					opacity: 1;
+				}
+			}
+
+			@keyframes bounce {
+				0% {
+					transform: translate3d(0, -25px, 0);
+					opacity: 0;
+				}
+				25% {
+					transform: translate3d(0, 10px, 0);
+				}
+				50% {
+					transform: translate3d(0, -6px, 0);
+				}
+				75% {
+					transform: translate3d(0, 2px, 0);
+				}
+				100% {
+					transform: translate3d(0, 0, 0);
+					opacity: 1;
+				}
+			}
+
+			@media (max-width: 600px) {
+				.form_wrapper {
+					.col_half {
+						width: 100%;
+						float: none;
+					}
+				}
+
+				.bottom_row .col_half {
+					width: 50%;
+					float: left;
+				}
+
+				.form_container .row .col_half.last {
+					border-left: none;
+				}
+
+				.remember_me {
+					padding-bottom: 20px;
+				}
+			}
+		</style>
+	</head><li>
+  <a href="#" id="preview"> 
+    <img src="images/can.jpg" alt=""/> 
+    <span class="active"></span> 
+    <span class="wrap"> 
+      <span class="link">Image Preview</span> 
+      
+    </span> 
+  </a> 
+</li>
+<article id="popupPreview" class="popupPreview">
+  <div class="customScrollBox">
+    <div class="container">
+      <div class="content">
+        <a id="popupPreviewClose"><img src="images/cross.png" width="20" alt="" /></a>
+        <h1>Image Preview</h1>
+        <p>Enjoy a quick view of our finest photography samples:</p>
+        <div class="gallery-grid">
+          <img src="images/gallery/pre1.jpg" alt="Pre-wedding">
+          <img src="images/gallery/wedding1.jpg" alt="Wedding">
+          <img src="images/gallery/haldi2.jpg" alt="Haldi">
+          <img src="images/gallery/model1.jpg" alt="Model Shoot">
+          <img src="images/gallery/baby1.jpg" alt="Baby Shoot">
+          <img src="images/gallery/Postwedding1.jpg" alt="Postwedding">
+        </div>
+      </div>
+    </div>
+    <div class="dragger_container">
+      <div class="dragger"></div>
+    </div>
+    <a class="scrollUpBtn" href="#"></a> 
+    <a class="scrollDownBtn" href="#"></a> 
+  </div>
+</article>
+
+	</body>
+
+	<!-- <body>
+		<div class="form_wrapper">
+			<div class="form_container">
+				<div class="title_container">
+					<h2>Registration</h2>
+				</div>
+				<div class="row clearfix">
+					<div class="">
+						<form>
+							<div class="input_field">
+								<span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+								<input type="email" name="email" placeholder="Email" required />
+							</div>
+							<div class="input_field">
+								<span><i aria-hidden="true" class="fa fa-lock"></i></span>
+								<input
+									type="password"
+									name="password"
+									placeholder="Password"
+									required
+								/>
+							</div>
+							<div class="input_field">
+								<span><i aria-hidden="true" class="fa fa-lock"></i></span>
+								<input
+									type="password"
+									name="password"
+									placeholder="Re-type Password"
+									required
+								/>
+							</div>
+							<div class="row clearfix">
+								<div class="col_half">
+									<div class="input_field">
+										<span><i aria-hidden="true" class="fa fa-user"></i></span>
+										<input type="text" name="name" placeholder="First Name" />
+									</div>
+								</div>
+								<div class="col_half">
+									<div class="input_field">
+										<span><i aria-hidden="true" class="fa fa-user"></i></span>
+										<input
+											type="text"
+											name="name"
+											placeholder="Last Name"
+											required
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="input_field radio_option">
+								<input type="radio" name="radiogroup1" id="rd1" />
+								<label for="rd1">Male</label>
+								<input type="radio" name="radiogroup1" id="rd2" />
+								<label for="rd2">Female</label>
+							</div>
+							<input class="button" type="submit" value="Register" />
+
+							<a href="/login">Already Have an Account</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body> -->
+</html>

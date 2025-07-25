@@ -1,0 +1,18 @@
+{
+	"name": "vivid-photo-master",
+	"version": "1.0.0",
+	"description": "Vivid Photo is a **modern** and **Elegant** **Photography Website Template**. It is **cross browser compatible** and created to suit needs of **photographers**. The template is made using **HTML5**, **jQuery** and **CSS3** with **no external fonts**, **HTML5 Contact Form** and a lot more stuff for various functionalities. You are free to use it for your personal as well as commercial projects.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.1.1",
+		"body-parser": "^1.20.3",
+		"express": "^4.21.2",
+		"mongoose": "^8.9.3"
+	}
+}
